@@ -1,7 +1,6 @@
 import React from 'react'
 import Routeur from '../Router/Routeur'
 
-
 const Layout = ({ children }) => {
     return (
         <>

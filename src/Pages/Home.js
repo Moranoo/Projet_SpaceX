@@ -5,7 +5,9 @@ export default function Home() {
     return (
         <div>
             <title>Home</title>
-            <Link to="/liste">LISTE</Link>
+            <Link to='/liste'>LISTE</Link>
+
+            <Link to='/history'>History</Link>
         </div>
     )
 }

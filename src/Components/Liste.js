@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 function Recherche() {
     const [data, setData] = useState([])
@@ -25,34 +25,34 @@ function Recherche() {
             <h1>Liste Membres Crew :</h1>
             <ul>
                 {data.map((item) => (
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card key={item.name} style={{ width: '18rem' }}>
+                        <Card.Img variant='top' src='holder.js/100px180' />
                         <Card.Body>
-                            <li style={{
-                                listStyle: 'none',
-                            }} key=
-                                {item.name}>
-                                <img style={{
-                                    with: "20px",
+                            <li
+                                style={{
+                                    listStyle: 'none',
                                 }}
-                                    src={item.image}></img>
+                                key={item.name}
+                            >
+                                <img
+                                    style={{
+                                        with: '20px',
+                                    }}
+                                    src={item.image}
+                                ></img>
                                 {item.name}
                             </li>
                             <Card.Title>{item.name}</Card.Title>
                             <Card.Text>
                                 Voici les informations sur le membre de l'équipage : {item.name}
                             </Card.Text>
-                            <Button variant="primary">En savoir plus</Button>
+                            <Button variant='primary'>En savoir plus</Button>
                         </Card.Body>
                     </Card>
-
-
-
-
                 ))}
             </ul>
         </div>
     )
 }
 
-export default Recherche;
+export default Recherche
