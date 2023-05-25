@@ -1,7 +1,6 @@
 import React from 'react'
 import Routeur from '../Router/Routeur'
 
-
 const Layout = ({ children }) => {
     return (
         <div
@@ -11,7 +10,7 @@ const Layout = ({ children }) => {
             }}
         >
             <header className='container-layout flex-centre'>
-                <Title>Space X</Title>
+                <title>Space X</title>
             </header>
             <main className='flex-centre'>{children}</main>
             <footer>footer</footer>
