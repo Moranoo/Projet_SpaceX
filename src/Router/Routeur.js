@@ -1,15 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from '../Pages/HomePage';
-import NoMatch from '../Pages/NoFound';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from '../Components/Layout'
+import Home from '../Pages/Home'
+import NoMatch from '../Pages/NoMatch'
 
-export default function Routeur() {
+const Routeur = () => {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="*" element={<NoMatch />} />
-            </Routes>
-        </Router>
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='*' element={<NoMatch />} />
+                </Routes>
+            </Layout>
+        </BrowserRouter>
     )
 }
+
+export default Routeur

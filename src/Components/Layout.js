@@ -1,21 +1,23 @@
-import { Title, Subtitle, Bold, Italic, Text } from '@tremor/react'
+import React from 'react'
+import Routeur from '../Router/Routeur'
+
 
 const Layout = ({ children }) => {
-   return (
-      <div
-         style={{
-            display: 'flex',
-            flexDirection: 'column',
-         }}
-      >
-         <header className='container-layout flex-centre'>
+    return (
+        <>
+            <header>
+                <nav>
+                    <ul>
+                        <h1>creww</h1>
+                    </ul>
+                </nav>
+            </header>
 
-            <Title>Space X</Title>
-         </header>
-         <main className='flex-centre'>{children}</main>
-         <footer>footer</footer>
-      </div>
-   )
+            <main>{children}</main>
+
+            <footer>&copy; 2023 IPSSI SQY</footer>
+        </>
+    )
 }
 
 export default Layout
