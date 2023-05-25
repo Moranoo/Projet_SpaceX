@@ -6,5 +6,4 @@ function App() {
     <Routeur />
   );
 }
-
 export default App;
