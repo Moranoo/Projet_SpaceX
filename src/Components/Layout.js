@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
             <header>
                 <nav>
                     <ul>
-                        <h1>creww</h1>
+                        <h1>Dragon's Crew</h1>
                     </ul>
                 </nav>
             </header>
