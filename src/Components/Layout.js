@@ -1,4 +1,6 @@
-import { Title, Subtitle, Bold, Italic, Text } from '@tremor/react'
+import React from 'react'
+import Routeur from '../Router/Routeur'
+
 
 const Layout = ({ children }) => {
     return (
