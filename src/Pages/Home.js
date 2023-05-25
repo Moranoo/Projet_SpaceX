@@ -8,6 +8,7 @@ export default function Home() {
             <Link to='/liste'>LISTE</Link>
 
             <Link to='/history'>History</Link>
+            <Link to='/company '>About SpaceX</Link>
         </div>
     )
 }

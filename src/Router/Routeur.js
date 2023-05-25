@@ -6,6 +6,7 @@ import NoMatch from '../Pages/NoMatch'
 import Liste from '../Pages/Liste'
 import History from '../Pages/History'
 import HistoPage from '../Pages/HistoPage'
+import CompanyPage from '../Pages/CampanyPage'
 
 const Routeur = () => {
     return (
@@ -17,6 +18,7 @@ const Routeur = () => {
                     <Route path='*' element={<NoMatch />} />
                     <Route path='/history' element={<History />} />
                     <Route path='history/detail/:id' element={<HistoPage />} />
+                    <Route path='/company' element={<CompanyPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

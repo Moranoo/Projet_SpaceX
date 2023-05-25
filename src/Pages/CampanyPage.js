@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HistoryComponents from '../Components/HistoryComponents'
+import Company from '../Components/Company'
 
-const History = () => {
+const CompanyPage = () => {
     return (
         <div>
-            <HistoryComponents />
+            <Company />
             <Link className='btn btn-primary' to='/'>
                 Home
             </Link>
         </div>
     )
 }
-export default History
+export default CompanyPage

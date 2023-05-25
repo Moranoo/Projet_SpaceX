@@ -28,24 +28,21 @@ function HistoryComponents() {
         <div>
             <h1> History of SpaceX :</h1>
             <ul>
-            <Row  xs={1} md={2} className='g-4'>
-                {data.map((item, id) => (
-                    
-                            <Col key={id}>
-                                <Card key={item.title}>
-                                    <Card.Body>
-                                        <Card.Title>{item.title}</Card.Title>
-                                        <Card.Text></Card.Text>
-                                        <Link key={item.id} to={`detail/${item.id}`}>
-                                            <Button variant='primary'>More information</Button>
-                                        </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        )
-                   
-                )}
-                 </Row>
+                <Row xs={1} md={2} className='g-4'>
+                    {data.map((item, id) => (
+                        <Col key={id}>
+                            <Card key={item.title}>
+                                <Card.Body>
+                                    <Card.Title>{item.title}</Card.Title>
+                                    <Card.Text></Card.Text>
+                                    <Link key={item.id} to={`detail/${item.id}`}>
+                                        <Button variant='primary'>More information</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
             </ul>
         </div>
     )
