@@ -17,6 +17,12 @@ export default function Home() {
                 <li>
                     <Link to="/Fuseur">Liste des fusées</Link>
                 </li>
+                <li>
+                    <Link to='/history'>History</Link>
+                </li>
+                <li>
+                    <Link to='/company '>About SpaceX</Link>
+                </li>
             </ul>
 
         </div>
