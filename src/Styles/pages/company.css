@@ -1,6 +1,18 @@
 .company {
     display: flex;
+    margin-right: 500px;
+    margin-left: auto;
     justify-content: center;
     align-items: center;
-
+    text-align: center;
+    width: 60rem;
+    min-height: 80vh;
+    font-size: 20px;
 }
+.about {
+    text-align: center;
+}
+
+/* p {
+    font-size: 25px;
+} */

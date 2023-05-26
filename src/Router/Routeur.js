@@ -7,6 +7,7 @@ import Liste from '../Pages/Liste'
 import History from '../Pages/History'
 import HistoPage from '../Pages/HistoPage'
 import CompanyPage from '../Pages/CampanyPage'
+import QuizPage from '../Pages/Quiz'
 
 const Routeur = () => {
     return (
@@ -19,6 +20,7 @@ const Routeur = () => {
                     <Route path='/history' element={<History />} />
                     <Route path='history/detail/:id' element={<HistoPage />} />
                     <Route path='/company' element={<CompanyPage />} />
+                    <Route path='/quiz' element={<QuizPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
