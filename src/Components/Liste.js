@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function Recherche() {
     const [data, setData] = useState([])
@@ -29,6 +31,7 @@ function Recherche() {
             console.error(error)
         }
     }
+
     useEffect(() => {
         const filteredResults = data.filter(
             (item) =>
@@ -54,33 +57,34 @@ function Recherche() {
                         />
                     </center>
                     {error && <p>{error}</p>}
-                    <ul>
+                    <Row xs={1} md={5} className='g-4'>
                         {filteredData.length === 0 && <p>Aucun résultat</p>}
                         {filteredData.map((item) => (
-                            <Card
-                                key={item.name}
-                                className='click-custome'
-                                style={{ width: '18rem' }}
-                                onClick={() => {
-                                    navigate(`/detail/${item.id}`)
-                                }}
-                            >
-                                <Card.Img
-                                    variant='top'
+                            <Col key={item.id}>
+                                <Card
+                                    className='click-custome'
                                     style={{ width: '18rem' }}
-                                    src={item.image}
-                                    alt={item.name}
-                                />
-                                <Card.Body>
-                                    <Card.Title>{item.name}</Card.Title>
-                                    <Card.Text>
-                                        Voici les informations sur le membre de l'équipage :{' '}
-                                        {item.name}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                                    onClick={() => {
+                                        navigate(`/detail/${item.id}`)
+                                    }}
+                                >
+                                    <Card.Img
+                                        variant='top'
+                                        style={{ width: '18rem' }}
+                                        src={item.image}
+                                        alt={item.name}
+                                    />
+                                    <Card.Body>
+                                        <Card.Title>{item.name}</Card.Title>
+                                        <Card.Text>
+                                            Voici les informations sur le membre de l'équipage :{' '}
+                                            {item.name}
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         ))}
-                    </ul>
+                    </Row>
                 </div>
             )}
         </>
@@ -88,38 +92,3 @@ function Recherche() {
 }
 
 export default Recherche
-
-// import { useState } from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import Collapse from 'react-bootstrap/Collapse';
-
-// function Example() {
-//     const [open, setOpen] = useState(false);
-
-//     return (
-//         <>
-//             <Button
-//                 onClick={() => setOpen(!open)}
-//                 aria-controls="example-collapse-text"
-//                 aria-expanded={open}
-//             >
-//                 click
-//             </Button>
-//             <div style={{ minHeight: '150px' }}>
-//                 <Collapse in={open} dimension="width">
-//                     <div id="example-collapse-text">
-//                         <Card body style={{ width: '400px' }}>
-//                             Anim pariatur cliche reprehenderit, enim eiusmod high life
-//                             accusamus terry richardson ad squid. Nihil anim keffiyeh
-//                             helvetica, craft beer labore wes anderson cred nesciunt sapiente
-//                             ea proident.
-//                         </Card>
-//                     </div>
-//                 </Collapse>
-//             </div>
-//         </>
-//     );
-// }
-
-// export default Example;

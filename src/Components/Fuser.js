@@ -34,7 +34,9 @@ function Recherche() {
                 <h1>loading </h1>
             ) : (
                 <div>
-                    <h1>Liste des fusées :</h1>
+                    <center>
+                        <h1>Liste des fusées :</h1>
+                    </center>
                     <Row xs={3} md={4} className='g-1'>
                         {data.map((item) => (
                             <Col key={item.id}>
