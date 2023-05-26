@@ -13,7 +13,6 @@ import History from '../Pages/History'
 import HistoPage from '../Pages/HistoPage'
 import CompanyPage from '../Pages/CampanyPage'
 
-
 const Routeur = () => {
     return (
         <BrowserRouter>
@@ -29,7 +28,6 @@ const Routeur = () => {
                     <Route path='/history' element={<History />} />
                     <Route path='history/detail/:id' element={<HistoPage />} />
                     <Route path='/company' element={<CompanyPage />} />
-
                 </Routes>
             </Layout>
         </BrowserRouter>
