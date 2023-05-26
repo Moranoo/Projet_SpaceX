@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 function HomeQuiz({ handleStartQuiz }) {
-    return (
-        <div>
-            <h1>Quiz sur l'exploration spatiale</h1>
-            <p>Testez vos connaissances sur l'exploration spatiale !</p>
-            <button onClick={handleStartQuiz}>Commencer le quiz</button>
-        </div>
-    )
+  return (
+    <div>
+      <h2>Choisissez un quiz :</h2>
+      <button onClick={() => handleStartQuiz(1)}>Quiz 1</button>
+      <button onClick={() => handleStartQuiz(2)}>Quiz 2</button>
+      <button onClick={() => handleStartQuiz(3)}>Quiz 3</button>
+      <button onClick={() => handleStartQuiz(4)}>Quiz 4</button>
+    </div>
+  );
 }
 
-export default HomeQuiz
+export default HomeQuiz;

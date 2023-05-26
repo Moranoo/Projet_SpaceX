@@ -9,9 +9,11 @@ export default function Home() {
         <div>
             <title>Home</title>
 
-            <Link to='/history'>History</Link>
-            <Link to='/company '>About SpaceX</Link>
-            <Link to='/quiz'>Quiz</Link>
+            <ul>
+                <li>
+                    <Link to="/crew">Liste des membres</Link>
+                </li>
+
                 <li>
                     <Link to="/Fuseur">Liste des fusées</Link>
                 </li>
@@ -20,6 +22,9 @@ export default function Home() {
                 </li>
                 <li>
                     <Link to='/company '>About SpaceX</Link>
+                </li>
+                <li>
+                    <Link to='/quiz '>Quiz</Link>
                 </li>
             </ul>
 
