@@ -31,9 +31,6 @@ export default function Detail() {
             ) : (
                 <div>
                     <h1>Détail sur le membre</h1>
-                    <Link to='/crew'>
-                        <button>Retour à liste de membre</button>
-                    </Link>
                     <ul>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img
@@ -56,6 +53,9 @@ export default function Detail() {
                             </Card.Body>
                         </Card>
                     </ul>
+                    <Link className='boutonHistoPage' to='/crew'>
+                        <button className='btn btn-primary'>Retour à liste de membre</button>
+                    </Link>
                 </div>
             )}
         </>

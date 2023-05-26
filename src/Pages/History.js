@@ -6,9 +6,6 @@ const History = () => {
     return (
         <div>
             <HistoryComponents />
-            <Link className='btn btn-primary' to='/'>
-                Home
-            </Link>
         </div>
     )
 }

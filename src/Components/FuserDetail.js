@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import '../Styles/App.css'
 
 export default function Detail() {
     const [data, setData] = useState([])
@@ -26,9 +27,6 @@ export default function Detail() {
         <>
             <div>
                 <h1>Fusée {data.name}</h1>
-                <Link to={`/fuseur`}>
-                    <Button variant='primary'>Retour à la liste de Fuser</Button>
-                </Link>
                 <Row xs={1} md={6} className='g-1'>
                     {data.flickr_images &&
                         data.flickr_images.map((image, index) => (
@@ -58,6 +56,11 @@ export default function Detail() {
                         </>
                     )}
                 </Card.Body>
+                <div className='boutonHistoPage'>
+                    <Link className='btn btn-primary' to='/history'>
+                        Retour à la liste de fusée
+                    </Link>
+                </div>
             </div>
         </>
     )
