@@ -1,19 +1,28 @@
 import React from 'react'
-import Routeur from '../Router/Routeur'
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Layout = ({ children }) => {
     return (
         <>
             <header>
-                <nav>
-                    <ul>
-                        <h1>Dragon's Crew</h1>
-                    </ul>
-                </nav>
+                <title>Space X</title>
+                <Nav justify variant='tabs' defaultActiveKey='/crew'>
+                    <Nav.Item>
+                        <Nav.Link href='/crew'>Liste des membres</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href='/Fuseur'>Liste des fusées</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href='/history'>History</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href='/company'>About SpaceX</Nav.Link>
+                    </Nav.Item>
+                </Nav>
             </header>
-
             <main>{children}</main>
-
             <footer>&copy; 2023 IPSSI SQY</footer>
         </>
     )
