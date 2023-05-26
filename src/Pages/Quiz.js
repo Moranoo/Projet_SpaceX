@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Quiz from '../Components/Quiz';
 import HomeQuiz from '../Components/HomeQuiz';
+import quizzesData from '../data/quiz3.json';
 
 function QuizPage() {
   const [selectedQuiz, setSelectedQuiz] = useState(null);
@@ -12,8 +13,8 @@ function QuizPage() {
     setRestartQuiz(false);
   }, [restartQuiz]);
 
-  const handleStartQuiz = (quizNumber) => {
-    setSelectedQuiz(quizNumber);
+  const handleStartQuiz = (quizId) => {
+    setSelectedQuiz(quizId);
     setStartQuiz(true);
   };
 
@@ -27,10 +28,10 @@ function QuizPage() {
         <Quiz
           restartQuiz={restartQuiz}
           handleRestartQuiz={handleRestartQuiz}
-          quizNumber={selectedQuiz}
+          quizData={quizzesData.find((quiz) => quiz.id === selectedQuiz)}
         />
       ) : (
-        <HomeQuiz handleStartQuiz={handleStartQuiz} />
+        <HomeQuiz handleStartQuiz={handleStartQuiz} quizzesData={quizzesData} />
       )}
     </div>
   );
