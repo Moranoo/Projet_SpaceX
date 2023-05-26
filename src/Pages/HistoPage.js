@@ -8,7 +8,7 @@ const HistoPage = () => {
             <DetailHistory />
             <div className='boutonHistoPage'>
                 <Link className='btn btn-primary' to='/history'>
-                    Back
+                    Retour
                 </Link>
             </div>
         </div>

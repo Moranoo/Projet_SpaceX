@@ -44,19 +44,22 @@ function Recherche() {
                 <h1>loading</h1>
             ) : (
                 <div>
-                    <h1>Crew :</h1>
-                    <input
-                        type='text'
-                        value={searchTerm}
-                        onChange={(event) => setSearchTerm(event.target.value)}
-                        placeholder='Search membre or agency...'
-                    />
+                    <center>
+                        <h1>Crew :</h1>
+                        <input
+                            type='text'
+                            value={searchTerm}
+                            onChange={(event) => setSearchTerm(event.target.value)}
+                            placeholder='Search membre or agency...'
+                        />
+                    </center>
                     {error && <p>{error}</p>}
                     <ul>
                         {filteredData.length === 0 && <p>Aucun résultat</p>}
                         {filteredData.map((item) => (
                             <Card
                                 key={item.name}
+                                className="click-custome"
                                 style={{ width: '18rem' }}
                                 onClick={() => {
                                     navigate(`/detail/${item.id}`)

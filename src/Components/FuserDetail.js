@@ -57,7 +57,7 @@ export default function Detail() {
                     )}
                 </Card.Body>
                 <div className='boutonHistoPage'>
-                    <Link className='btn btn-primary' to='/history'>
+                    <Link className='btn btn-primary' to='/fuseur'>
                         Retour à la liste de fusée
                     </Link>
                 </div>

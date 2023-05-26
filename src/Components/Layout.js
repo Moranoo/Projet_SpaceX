@@ -20,6 +20,9 @@ const Layout = ({ children }) => {
                     <Nav.Item>
                         <Nav.Link href='/company'>About SpaceX</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href='/quiz'>QUIZ</Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </header>
             <main>{children}</main>
