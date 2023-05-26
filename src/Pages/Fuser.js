@@ -7,7 +7,6 @@ const Fuser = () => {
     return (
         <div>
             <FuseDetails />
-            <Link to="/">Home</Link>
         </div>
     )
 }

@@ -25,12 +25,10 @@ function DetailHistory() {
             console.error(error)
         }
     }
-
     const formattedDate = moment(data.event_date_utc).format('DD/MM/YYYY HH:mm:ss')
-    //
+
     const articleLink = data.links && data.links.article
 
-    //
     const handleButtonClick = () => {
         window.open(articleLink, '_blank')
     }
