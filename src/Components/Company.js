@@ -42,7 +42,7 @@ function Company() {
                                 <p>CTO: {data.cto}</p>
                                 <p>COO: {data.coo}</p>
                                 <p>CTO of Propulsion: {data.cto_propulsion}</p>
-                                <p>Valuation: {data.valuation}</p>
+                                <p>Valuation: {data.valuation} $ </p>
                                 <p>Summary: {data.summary}</p>
                             </Card.Text>
                             <Card.Link href={website} target='_blank'>
