@@ -59,7 +59,7 @@ function Recherche() {
                         {filteredData.map((item) => (
                             <Card
                                 key={item.name}
-                                className="click-custome"
+                                className='click-custome'
                                 style={{ width: '18rem' }}
                                 onClick={() => {
                                     navigate(`/detail/${item.id}`)

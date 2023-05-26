@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 // Import bootsrap
-import { Row, Col, Card, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap'
 
 function HistoryComponents() {
     const [data, setData] = useState([])
