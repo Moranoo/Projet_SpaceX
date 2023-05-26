@@ -9,7 +9,7 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
   const [showResult, setShowResult] = useState(false);
   const [timer, setTimer] = useState(20);
   const [resultMessage, setResultMessage] = useState('')
- 
+
   useEffect(() => {
     const shuffle = (array) => {
       const shuffledArray = [...array];
@@ -25,12 +25,12 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
         ...question,
         id: index + 1,
         answer: question.answers.find((answer) => answer.correct === true).option
-        
+
       };
     });
 
 
-   
+
     setQuestions(shuffledQuestions);
 
   }, [restartQuiz]);
@@ -69,42 +69,42 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
     }
 
 
-  const handleRestart = () => {
-    setCurrentQuestion(0);
-    setScore(0);
-    setSelectedAnswer('');
-    setTimer(20);
-    setShowResult(false);
-    handleRestartQuiz();
+    const handleRestart = () => {
+      setCurrentQuestion(0);
+      setScore(0);
+      setSelectedAnswer('');
+      setTimer(20);
+      setShowResult(false);
+      handleRestartQuiz();
 
-    let newResultMessage;
+      let newResultMessage;
 
-    switch (score) {
-      case 0:
-        newResultMessage = "Vous n'avez obtenu aucun point. Essayez encore !"
-        break
-      case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-        newResultMessage = `Vous avez obtenu ${score}/${questions.length} points. Vous pouvez faire mieux !`
-        break;
-      case 6:
-      case 7:
-      case 8:
-      case 9:
-        newResultMessage = `Vous avez obtenu ${score}/${questions.length} points. Bon travail !`
-        break
-      case 10:
-        newResultMessage = `Vous êtes incroyable ! Vous avez obtenu un score parfait de ${score}/${questions.length} points !`
-        break
-      default:
-        newResultMessage = ""
-    }
+      switch (score) {
+        case 0:
+          newResultMessage = "Vous n'avez obtenu aucun point. Essayez encore !"
+          break
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+          newResultMessage = `Vous avez obtenu ${score}/${questions.length} points. Vous pouvez faire mieux !`
+          break;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+          newResultMessage = `Vous avez obtenu ${score}/${questions.length} points. Bon travail !`
+          break
+        case 10:
+          newResultMessage = `Vous êtes incroyable ! Vous avez obtenu un score parfait de ${score}/${questions.length} points !`
+          break
+        default:
+          newResultMessage = ""
+      }
 
-    setResultMessage(newResultMessage)
-  };
+      setResultMessage(newResultMessage)
+    };
 
 
     return (
@@ -137,7 +137,12 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
           </button>
 
         </div>
-    )
+      )
+        : (
+          <p>Chargement des questions...</p>
+        )}
+    </div>
+  );
 }
 
 export default Quiz
