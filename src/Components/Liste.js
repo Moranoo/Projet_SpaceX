@@ -1,7 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { useNavigate, useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
+
 
 function Recherche() {
     const [data, setData] = useState([]);
@@ -27,6 +30,7 @@ function Recherche() {
             setError('Une erreur est survenue lors du chargement des données.');
             console.error(error);
         }
+
     };
     useEffect(() => {
         const filteredResults = data.filter(item =>

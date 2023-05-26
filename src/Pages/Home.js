@@ -8,6 +8,7 @@ export default function Home() {
     return (
         <div>
             <title>Home</title>
+
             <ul>
                 <li>
                     <Link to="/crew">Liste des membres</Link>
@@ -17,6 +18,7 @@ export default function Home() {
                     <Link to="/Fuseur">Liste des fusées</Link>
                 </li>
             </ul>
+
         </div>
     )
 }

@@ -1,0 +1,21 @@
+.DetailHistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+footer {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.boutonHistoPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.custom-card {
+    width: 500px;
+}
