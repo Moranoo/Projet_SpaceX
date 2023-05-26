@@ -1,24 +1,24 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Layout = ({ children }) => {
     return (
         <>
             <header>
                 <title>Space X</title>
-                <Nav justify variant="tabs" defaultActiveKey="/crew">
+                <Nav justify variant='tabs' defaultActiveKey='/crew'>
                     <Nav.Item>
-                        <Nav.Link href="/crew">Liste des membres</Nav.Link>
+                        <Nav.Link href='/crew'>Liste des membres</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/Fuseur">Liste des fusées</Nav.Link>
+                        <Nav.Link href='/Fuseur'>Liste des fusées</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/history">History</Nav.Link>
+                        <Nav.Link href='/history'>History</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/company">About SpaceX</Nav.Link>
+                        <Nav.Link href='/company'>About SpaceX</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </header>
