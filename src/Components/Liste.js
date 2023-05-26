@@ -1,58 +1,84 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Card from 'react-bootstrap/Card';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+
 
 function Recherche() {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredData, setFilteredData] = useState([]);
+    const [error, setError] = useState('');
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        fetchData();
+    }, []);
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('https://api.spacexdata.com/v4/crew')
-
-            setData(response.data)
+            const response = await axios.get(`https://api.spacexdata.com/v4/crew`);
+            setData(response.data);
+            setFilteredData(response.data);
+            setIsLoading(false);
+            console.log(response.data);
         } catch (error) {
-            console.error(error)
+            setError('Une erreur est survenue lors du chargement des données.');
+            console.error(error);
         }
-    }
+
+    };
+    useEffect(() => {
+        const filteredResults = data.filter(item =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (item.agency && item.agency.toLowerCase().includes(searchTerm.toLowerCase()))
+        );
+        setFilteredData(filteredResults);
+    }, [searchTerm, data]);
+
 
     return (
-        <div>
-            <h1>Liste Membres Crew :</h1>
-            <ul>
-                {data.map((item) => (
-                    <Card key={item.name} style={{ width: '18rem' }}>
-                        <Card.Img variant='top' src='holder.js/100px180' />
-                        <Card.Body>
-                            <li
-                                style={{
-                                    listStyle: 'none',
-                                }}
-                                key={item.name}
-                            >
-                                <img
-                                    style={{
-                                        with: '20px',
+        <>
+            {isLoading ? (
+                <h1>loading</h1>
+            ) : (
+                <div>
+                    <h1>Liste Membres Crew :</h1>
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={event => setSearchTerm(event.target.value)}
+                        placeholder="Search membre or agency..."
+                    />
+                    {error && <p>{error}</p>}
+                    <ul>
+                        {filteredData.length === 0 && <p>Aucun résultat</p>}
+                        {filteredData.map(item => (
+                            <Card key={item.name} style={{ width: '18rem' }}>
+                                <Card.Body
+                                    onClick={() => {
+                                        navigate(`/detail/${item.id}`);
                                     }}
-                                    src={item.image}
-                                ></img>
-                                {item.name}
-                            </li>
-                            <Card.Title>{item.name}</Card.Title>
-                            <Card.Text>
-                                Voici les informations sur le membre de l'équipage : {item.name}
-                            </Card.Text>
-                            <Button variant='primary'>En savoir plus</Button>
-                        </Card.Body>
-                    </Card>
-                ))}
-            </ul>
-        </div>
-    )
+                                >
+                                    <li style={{ listStyle: 'none' }}>
+                                        <img style={{ width: '18rem' }} src={item.image} alt={item.name} />
+                                    </li>
+                                    <Card.Title>{item.name}</Card.Title>
+                                    <Card.Text>
+                                        Voici les informations sur le membre de l'équipage : {item.name}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </>
+    );
 }
 
-export default Recherche
+export default Recherche;
