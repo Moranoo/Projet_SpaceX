@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default function Home() {
     return (
         <div>
+
             <h1>Bienvenue sur le site Space X</h1>
         </div>
     )
