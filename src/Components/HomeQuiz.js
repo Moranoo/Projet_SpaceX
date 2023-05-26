@@ -12,6 +12,7 @@ function HomeQuiz({ handleStartQuiz }) {
       ))}
     </div>
   );
+
 }
 
-export default HomeQuiz;
+export default HomeQuiz

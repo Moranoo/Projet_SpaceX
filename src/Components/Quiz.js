@@ -67,7 +67,7 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
     } else {
       setShowResult(true);
     }
-  };
+
 
   const handleRestart = () => {
     setCurrentQuestion(0);
@@ -106,8 +106,9 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
     setResultMessage(newResultMessage)
   };
 
-  if (showResult) {
+
     return (
+
       <div>
         <h2>Résultat</h2>
         <p>
@@ -134,12 +135,9 @@ function Quiz({ restartQuiz, handleRestartQuiz }) {
           <button onClick={handleNextQuestion} disabled={selectedAnswer === ''}>
             Question suivante
           </button>
+
         </div>
-      ) : (
-        <p>Chargement des questions...</p>
-      )}
-    </div>
-  );
+    )
 }
 
-export default Quiz;
+export default Quiz

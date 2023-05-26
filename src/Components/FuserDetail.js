@@ -26,7 +26,9 @@ export default function Detail() {
     return (
         <>
             <div>
-                <h1>Fusée {data.name}</h1>
+                <center>
+                    <h1>Fusée {data.name}</h1>
+                </center>
                 <Row xs={1} md={6} className='g-1'>
                     {data.flickr_images &&
                         data.flickr_images.map((image, index) => (
@@ -37,27 +39,32 @@ export default function Detail() {
                             </Col>
                         ))}
                 </Row>
-                <Card.Body style={{ width: '20rem', textAlign: 'center' }}>
-                    <Card.Title>{data.name}</Card.Title>
-                    <Card.Text>{data.active}</Card.Text>
-                    <Card.Text>Compagnie : {data.company}</Card.Text>
-                    <Card.Text>Pays d'origine : {data.country}</Card.Text>
-                    <Card.Text>Date du premier décollage : {data.first_flight}</Card.Text>
-                    <Card.Text>
-                        Description :<br />
-                        {data.description}
-                    </Card.Text>
-                    {data.mass && <Card.Text>Poids : {data.mass.kg} kg</Card.Text>}
-                    {data.engines && (
-                        <>
-                            <Card.Text>Nombre de moteur : {data.engines.number}</Card.Text>
-                            <Card.Text>Type de moteur : {data.engines.type}</Card.Text>
-                            <Card.Text>Carburant : {data.engines.propellant_1}</Card.Text>
-                        </>
-                    )}
-                </Card.Body>
+                <center>
+                    <Card.Body style={{ width: '20rem', textAlign: 'center' }}>
+                        <Card.Title>{data.name}</Card.Title>
+                        <Card.Text>{data.active}</Card.Text>
+                        <Card.Text>Compagnie : {data.company}</Card.Text>
+                        <Card.Text>Pays d'origine : {data.country}</Card.Text>
+                        <Card.Text>Date du premier décollage : {data.first_flight}</Card.Text>
+                        <Card.Text>
+                            Description :<br />
+                            {data.description}
+                        </Card.Text>
+                        {data.mass && <Card.Text>Poids : {data.mass.kg} kg</Card.Text>}
+                        {data.engines && (
+                            <>
+                                <Card.Text>Nombre de moteur : {data.engines.number}</Card.Text>
+                                <Card.Text>Type de moteur : {data.engines.type}</Card.Text>
+                                <Card.Text>Carburant : {data.engines.propellant_1}</Card.Text>
+                            </>
+                        )}
+                    </Card.Body>
+                </center>
+                <br />
+                <br />
                 <div className='boutonHistoPage'>
-                    <Link className='btn btn-primary' to='/history'>
+
+                    <Link className='btn btn-primary' to='/fuseur'>
                         Retour à la liste de fusée
                     </Link>
                 </div>

@@ -7,7 +7,7 @@ const FuserDetail = () => {
         <div>
             <FuseDetails />
             <Link className='btn btn-primary' to='/history'>
-                Back
+                Retour
             </Link>
         </div>
     )

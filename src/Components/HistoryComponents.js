@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 // Import bootsrap
-import { Row, Col, Card, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap'
 
 function HistoryComponents() {
     const [data, setData] = useState([])
@@ -23,7 +23,9 @@ function HistoryComponents() {
 
     return (
         <div>
-            <h1> History of SpaceX :</h1>
+            <center>
+                <h1> History of SpaceX </h1>
+            </center>
             <ul>
                 <Row xs={1} md={2} lg={3} className='g-4'>
                     {data.map((item, id) => (
