@@ -3,10 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 // Import bootsrap
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import { Row, Col, Card, Button } from 'react-bootstrap';
 
 function HistoryComponents() {
     const [data, setData] = useState([])
@@ -28,9 +25,9 @@ function HistoryComponents() {
         <div>
             <h1> History of SpaceX :</h1>
             <ul>
-                <Row xs={1} md={2} className='g-4'>
+                <Row xs={1} md={2} lg={3} className='g-4'>
                     {data.map((item, id) => (
-                        <Col key={id}>
+                        <Col key={id} className='mb-4' style={{ width: '22rem' }}>
                             <Card key={item.title}>
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
