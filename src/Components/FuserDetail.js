@@ -65,7 +65,6 @@ export default function Detail() {
                 <br />
                 <br />
                 <div className='boutonHistoPage'>
-
                     <Link className='btn btn-primary' to='/fuseur'>
                         Retour à la liste de fusée
                     </Link>

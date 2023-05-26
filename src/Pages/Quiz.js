@@ -1,9 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
-import Quiz from '../Components/Quiz';
-import HomeQuiz from '../Components/HomeQuiz';
-import quizzesData from '../data/quiz3.json';
-
+import React, { useState, useEffect } from 'react'
+import Quiz from '../Components/Quiz'
+import HomeQuiz from '../Components/HomeQuiz'
+import quizzesData from '../data/quiz3.json'
 
 function QuizPage() {
     const [selectedQuiz, setSelectedQuiz] = useState(null)
@@ -15,32 +13,28 @@ function QuizPage() {
         setRestartQuiz(false)
     }, [restartQuiz])
 
-
-  const handleStartQuiz = (quizId) => {
-    setSelectedQuiz(quizId);
-    setStartQuiz(true);
-  };
-
+    const handleStartQuiz = (quizId) => {
+        setSelectedQuiz(quizId)
+        setStartQuiz(true)
+    }
 
     const handleRestartQuiz = () => {
         setRestartQuiz(true)
     }
 
-
-  return (
-    <div className="App">
-      {startQuiz ? (
-        <Quiz
-          restartQuiz={restartQuiz}
-          handleRestartQuiz={handleRestartQuiz}
-          quizData={quizzesData.find((quiz) => quiz.id === selectedQuiz)}
-        />
-      ) : (
-        <HomeQuiz handleStartQuiz={handleStartQuiz} quizzesData={quizzesData} />
-      )}
-    </div>
-  );
-
+    return (
+        <div className='App'>
+            {startQuiz ? (
+                <Quiz
+                    restartQuiz={restartQuiz}
+                    handleRestartQuiz={handleRestartQuiz}
+                    quizData={quizzesData.find((quiz) => quiz.id === selectedQuiz)}
+                />
+            ) : (
+                <HomeQuiz handleStartQuiz={handleStartQuiz} quizzesData={quizzesData} />
+            )}
+        </div>
+    )
 }
 
 export default QuizPage

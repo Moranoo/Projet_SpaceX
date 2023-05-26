@@ -39,7 +39,7 @@ export default function Detail() {
                     <br />
                     <br />
                     <center>
-                        <Row className="justify-content-center">
+                        <Row className='justify-content-center'>
                             <Col sm={6}>
                                 <Card style={{ width: '18rem' }}>
                                     <Card.Img
@@ -54,7 +54,11 @@ export default function Detail() {
                                         <Card.Text>Agence : {data.agency}</Card.Text>
                                         <Card.Text>
                                             Info Wikipedia via le lien suivant :
-                                            <a href={data.wikipedia} target='_blank' rel='noreferrer'>
+                                            <a
+                                                href={data.wikipedia}
+                                                target='_blank'
+                                                rel='noreferrer'
+                                            >
                                                 {' '}
                                                 ICI
                                             </a>

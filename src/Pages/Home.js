@@ -8,8 +8,11 @@ export default function Home() {
         <div>
             <center>
                 <h1>Bienvenue sur le site Space X</h1>
-                <img style={{ borderRadius: '50%' }}
-                    src='https://www.spacex.com/static/images/share.jpg' alt='Space X' />
+                <img
+                    style={{ borderRadius: '50%' }}
+                    src='https://www.spacex.com/static/images/share.jpg'
+                    alt='Space X'
+                />
             </center>
         </div>
     )

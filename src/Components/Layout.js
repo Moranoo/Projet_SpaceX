@@ -12,7 +12,9 @@ const Layout = ({ children }) => {
                         <Nav.Link href='/crew'>Liste des membres</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey href='/Fuseur'>Liste des fusées</Nav.Link>
+                        <Nav.Link eventKey href='/Fuseur'>
+                            Liste des fusées
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href='/history'>History</Nav.Link>

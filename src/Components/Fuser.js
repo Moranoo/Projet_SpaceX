@@ -47,7 +47,9 @@ function Recherche() {
                                         <Card.Body>
                                             <Card.Title>Fusé {item.name}</Card.Title>
                                             <Card.Img src={item.flickr_images[1]} />
-                                            <Card.Text>Taille : {item.height.meters} mètres</Card.Text>
+                                            <Card.Text>
+                                                Taille : {item.height.meters} mètres
+                                            </Card.Text>
                                             <Card.Text>Poids : {item.mass.kg} kg</Card.Text>
                                             <Card.Text>
                                                 Diamètre : {item.diameter.meters} mètres
