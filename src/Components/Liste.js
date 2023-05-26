@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
 import { useNavigate, useParams } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card';
+
 
 
 function Recherche() {
@@ -47,7 +48,7 @@ function Recherche() {
                 <h1>loading</h1>
             ) : (
                 <div>
-                    <h1>Liste Membres Crew :</h1>
+                    <h1>Crew :</h1>
                     <input
                         type="text"
                         value={searchTerm}
@@ -58,15 +59,15 @@ function Recherche() {
                     <ul>
                         {filteredData.length === 0 && <p>Aucun résultat</p>}
                         {filteredData.map(item => (
-                            <Card key={item.name} style={{ width: '18rem' }}>
+
+                            <Card key={item.name} style={{ width: '18rem' }}
+                                onClick={() => {
+                                    navigate(`/detail/${item.id}`);
+                                }}>
+                                <Card.Img variant="top" style={{ width: '18rem' }} src={item.image} alt={item.name} />
                                 <Card.Body
-                                    onClick={() => {
-                                        navigate(`/detail/${item.id}`);
-                                    }}
+
                                 >
-                                    <li style={{ listStyle: 'none' }}>
-                                        <img style={{ width: '18rem' }} src={item.image} alt={item.name} />
-                                    </li>
                                     <Card.Title>{item.name}</Card.Title>
                                     <Card.Text>
                                         Voici les informations sur le membre de l'équipage : {item.name}
@@ -82,3 +83,38 @@ function Recherche() {
 }
 
 export default Recherche;
+
+// import { useState } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
+// import Collapse from 'react-bootstrap/Collapse';
+
+// function Example() {
+//     const [open, setOpen] = useState(false);
+
+//     return (
+//         <>
+//             <Button
+//                 onClick={() => setOpen(!open)}
+//                 aria-controls="example-collapse-text"
+//                 aria-expanded={open}
+//             >
+//                 click
+//             </Button>
+//             <div style={{ minHeight: '150px' }}>
+//                 <Collapse in={open} dimension="width">
+//                     <div id="example-collapse-text">
+//                         <Card body style={{ width: '400px' }}>
+//                             Anim pariatur cliche reprehenderit, enim eiusmod high life
+//                             accusamus terry richardson ad squid. Nihil anim keffiyeh
+//                             helvetica, craft beer labore wes anderson cred nesciunt sapiente
+//                             ea proident.
+//                         </Card>
+//                     </div>
+//                 </Collapse>
+//             </div>
+//         </>
+//     );
+// }
+
+// export default Example;

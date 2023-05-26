@@ -6,9 +6,6 @@ const CompanyPage = () => {
     return (
         <div>
             <Company />
-            <Link className='btn btn-primary' to='/'>
-                Home
-            </Link>
         </div>
     )
 }
