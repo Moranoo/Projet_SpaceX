@@ -37,28 +37,32 @@ function Recherche() {
                     <center>
                         <h1>Liste des fusées :</h1>
                     </center>
-                    <Row xs={3} md={4} className='g-1'>
-                        {data.map((item) => (
-                            <Col key={item.id}>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Body>
-                                        <Card.Title>Fusé {item.name}</Card.Title>
-                                        <Card.Img src={item.flickr_images[1]} />
-                                        <Card.Text>Taille : {item.height.meters} mètres</Card.Text>
-                                        <Card.Text>Poids : {item.mass.kg} kg</Card.Text>
-                                        <Card.Text>
-                                            Diamètre : {item.diameter.meters} mètres
-                                        </Card.Text>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        <Link key={item.id} to={`/fuseur/${item.id}`}>
-                                            <Button variant='primary'>+ Infos</Button>
-                                        </Link>
-                                    </Card.Footer>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
+                    <br />
+                    <br />
+                    <center>
+                        <Row xs={3} md={4} className='g-1'>
+                            {data.map((item) => (
+                                <Col key={item.id}>
+                                    <Card style={{ width: '18rem' }}>
+                                        <Card.Body>
+                                            <Card.Title>Fusé {item.name}</Card.Title>
+                                            <Card.Img src={item.flickr_images[1]} />
+                                            <Card.Text>Taille : {item.height.meters} mètres</Card.Text>
+                                            <Card.Text>Poids : {item.mass.kg} kg</Card.Text>
+                                            <Card.Text>
+                                                Diamètre : {item.diameter.meters} mètres
+                                            </Card.Text>
+                                        </Card.Body>
+                                        <Card.Footer>
+                                            <Link key={item.id} to={`/fuseur/${item.id}`}>
+                                                <Button variant='primary'>+ Infos</Button>
+                                            </Link>
+                                        </Card.Footer>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </center>
                 </div>
             )}
         </>

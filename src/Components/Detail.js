@@ -36,6 +36,8 @@ export default function Detail() {
                     <center>
                         <h1>Détail sur le membre</h1>
                     </center>
+                    <br />
+                    <br />
                     <center>
                         <Row className="justify-content-center">
                             <Col sm={6}>
@@ -62,6 +64,8 @@ export default function Detail() {
                             </Col>
                         </Row>
                     </center>
+                    <br />
+                    <br />
                     <Link className='boutonHistoPage' to='/crew'>
                         <button className='btn btn-primary'>Retour à la liste de membres</button>
                     </Link>

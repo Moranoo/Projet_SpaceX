@@ -29,6 +29,8 @@ export default function Detail() {
                 <center>
                     <h1>Fusée {data.name}</h1>
                 </center>
+                <br />
+                <br />
                 <Row xs={1} md={6} className='g-1'>
                     {data.flickr_images &&
                         data.flickr_images.map((image, index) => (
