@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Recherche from '../Components/Liste'
+import FuseDetails from '../Components/Fuser'
 
 
-const Liste = () => {
+const FuserDetail = () => {
     return (
         <div>
+            <FuseDetails />
             <Link to="/">Home</Link>
-            <Recherche />
         </div>
     )
 }
-export default Liste;
+export default FuserDetail;

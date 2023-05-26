@@ -4,7 +4,9 @@ import Layout from '../Components/Layout'
 import Home from '../Pages/Home'
 import NoMatch from '../Pages/NoMatch'
 import Liste from '../Pages/Liste'
-import Detail from '../Pages/Detail'
+import Detail from '../Components/Detail'
+import Fuser from '../Pages/Fuser'
+import FuserDetail from '../Components/FuserDetail'
 
 const Routeur = () => {
     return (
@@ -12,9 +14,11 @@ const Routeur = () => {
             <Layout>
                 <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/liste' element={<Liste />} />
+                    <Route path='/crew' element={<Liste />} />
                     <Route path='/detail/:id' element={<Detail />} />
                     <Route path='*' element={<NoMatch />} />
+                    <Route path='/fuseur' element={<Fuser />} />
+                    <Route path='/fuseur/:id' element={<FuserDetail />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

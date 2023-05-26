@@ -1,5 +1,4 @@
 import React from 'react'
-import Routeur from '../Router/Routeur'
 
 
 const Layout = ({ children }) => {
@@ -12,9 +11,7 @@ const Layout = ({ children }) => {
                     </ul>
                 </nav>
             </header>
-
             <main>{children}</main>
-
             <footer>&copy; 2023 IPSSI SQY</footer>
         </>
     )
